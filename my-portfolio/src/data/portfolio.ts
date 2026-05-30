@@ -19,9 +19,9 @@ export interface Profile{
 export interface Skill{
     name:string             //名前
     version:string          //バージョン
-    level:string            //スキルレベル
+    level:number            //スキルレベル
     category:string         //カテゴリ－
-    capabilities:string     //できること
+    capabilities:string[]   //できること
     note:string|null        //実装経験
 }
  
@@ -50,7 +50,7 @@ export interface Work{
     techPoints:string|null  //ポイント
     designNotes:string|null //工夫
     implmntationTheme:string|null   //テーマ
-    troublesooting:string|null      //問題・解決
+    troubleshooting:string|null      //問題・解決
     perfformance:string|null        //パフォーマンス工夫
 }
  
@@ -59,7 +59,7 @@ export interface GameJam{
     date:string             //日時
     theme:string            //情報
     description:string      //作品詳細
-    platform:string         //プラットフォーム
+    platform:string[]       //プラットフォーム
     role:string             //担当箇所
     team:string             //チーム情報
     result:string|null      //結果
@@ -86,27 +86,29 @@ export interface TimeLineItem{
 export const profile:Profile={
     name: "増井司",
     nameEn: "Masui Tsukasa",
-    role: "",
-    school: "",
-    department: "",
-    graduationYear: "",
-    bio: "",
-    motto: "",
-    avater: "",
+    role: "プログラマー",
+    school: "京都デザイン＆テクノロジー専門学校",
+    department: "スーパーゲームクリエイター専攻",
+    graduationYear: "2028年3月予定",
+    bio: "FFが好きです。",
+    motto: "食べちゃうニャン",
+    avater: "顔写真だお",
     links: {
-        github: "",
+        github: "https://github.com/tomato-eater",
         twitter: null
     }
 }
  
-export const skill:Skill={
-    name: "",
-    version: "",
-    level: "",
-    category: "",
-    capabilities: "",
-    note: null
-}
+export const skills:Skill[]=[
+    {
+        name: "",
+        version: "",
+        level: 0,
+        category: "",
+        capabilities: [],
+        note: null
+    }
+]
  
 export const venue:Venue={
     name: "",
@@ -131,7 +133,7 @@ export const work:Work={
     techPoints: null,
     designNotes: null,
     implmntationTheme: null,
-    troublesooting: null,
+    troubleshooting: null,
     perfformance: null
 }
  
@@ -140,14 +142,13 @@ export const gamejam:GameJam={
     date: "",
     theme: "",
     description: "",
-    platform: "",
+    platform: [],
     role: "",
     team: "",
     result: null,
     url: null,
     reflection: ""
 }
- 
  
 export const certification:Certification={
     name: "",
@@ -157,8 +158,9 @@ export const certification:Certification={
     status: "取得済み"
 }
  
-export const timelineitem:TimeLineItem={
-    year: "",
-    event: ""
-}
- 
+export const timeline:TimeLineItem[]=[
+    {
+        year: "",
+        event: ""
+    }
+]

@@ -29,9 +29,15 @@ export default function Header({theme,onThemeToggle}:Props){
                         </ul>
                     </nav>
                     
-                    <button onClick={onThemeToggle} className="theme-toggle">
-                        {theme === "light" ? "Dark Mode" : "Light Mode"}
+                   <button
+                        className = "theme-toggle"
+                        onClick = { onThemeToggle }
+                        aria-label = { theme === 'dark' ? 'ライトモードに切り替え' : 'ダークモードに切り替え' }
+                    >
+                        {theme === 'dark' ? '☀':'🌙'}
+
                     </button>
+
 
                 </div>
             </div>

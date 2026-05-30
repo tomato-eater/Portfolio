@@ -1,11 +1,12 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
-export function useTheme():{theme:string; toggle:()=>void}{
-    const [theme,setTheme]=useState(()=>localStorage.getItem("theme")??"light");
-    useEffect(()=>{
-        localStorage.setItem("theme",theme);
-        document.documentElement.setAttribute("data-theme",theme);
-    },[theme]);
-    const toggle=()=>setTheme((t)=>(t==="dark"?"light":"dark"));
-    return {theme,toggle};
+export default function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
 }

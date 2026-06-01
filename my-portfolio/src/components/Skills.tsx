@@ -22,17 +22,17 @@ const LEVEL_CONFIG: LevelConfig[]=[
 ]
 
 function getLevelConfig(level:number):LevelConfig{
-    return LEVEL_CONFIG.find((l)=>level <l.max) ?? LEVEL_CONFIG.at(-1)!
+    return LEVEL_CONFIG.find((l) => level < l.max) ?? LEVEL_CONFIG.at(-1)!
 }
 
 function SkillCard({skill}:{skill:Skill}){
     const config = getLevelConfig(skill.level)
     return(
-        <div className="skill-card">
-            <div className="skill-card-header">
-                <div className="skill-card-info">
-                    <span className="skill-card-name">{skill.name}</span>
-                    <span className="skill-card-version">{skill.version}</span>
+        <div className = "skill-card">
+            <div className = "skill-card-header">
+                <div className = "skill-card-info">
+                    <span className = "skill-card-name">{skill.name}</span>
+                    <span className = "skill-card-version">{skill.version}</span>
                 </div>
             </div>
         </div>
@@ -40,36 +40,25 @@ function SkillCard({skill}:{skill:Skill}){
 }
 
 export default function Skills(){
-    const [activeCategory,setActiveCategory]=useState('all')
-    const categories =['all',...new Set(skills.map((s)=>(
-        s.category
-    )))]
-    const filtered = activeCategory==='all'
-    ?skills
-    :skills.filter((s)=>s.category===activeCategory)
+    const [activeCategory,setActiveCategory] = useState('all')
+    const categories = ['all',...new Set(skills.map((s) => (s.category)))]
+    const filtered = activeCategory === 'all' ?skills : skills.filter((s) => s.category===activeCategory)
 
     return (
-        <section className="section" id="skills">
-            <div className="container">
-                <h2 className="section-title"><span>Skills</span></h2>
-                <p className="section-sub">技術スタック</p>
-                <div className="skills-categories">
+        <section className = "section" id="skills">
+            <div className = "container">
+                <h2 className = "section-title"><span>Skills</span></h2>
+                <p className = "section-sub">技術スタック</p>
+                <div className = "skills-categories">
                     {categories.map((cat)=>(
-                        <button 
-                        key={cat}
-                        className={`skill-filter-btn 
-                            ${activeCategory===cat ? 'active':''}`}
-                        onClick={()=>setActiveCategory(cat)}>
-                        
-                        {CATEGORY_LABELS[cat] ?? cat}
+                        <button key={cat} className={`skill-filter-btn $ {activeCategory===cat ? 'active':''}`} onClick = {() => setActiveCategory(cat)}>
+                            {CATEGORY_LABELS[cat] ?? cat}
                         </button>
                     ))}
                 </div>
 
-                <div className="skill-grid">
-                    {filtered.map((skill)=>(
-                        <SkillCard key={skill.name} skill={skill}/>
-                    ))}
+                <div className = "skill-grid">
+                    {filtered.map((skill) => (<SkillCard key={skill.name} skill={skill}/>))}
                 </div>
             </div>
         </section>

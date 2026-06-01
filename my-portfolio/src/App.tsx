@@ -21,10 +21,10 @@ export default function App(){
   return(
     <>
       <ScrollToTop />
-      <Header theme={theme} onThemeToggle={toggle} />
+      <Header theme = {theme} onThemeToggle = {toggle} />
       <main>
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path = "/" element = {<HomePage />} />
         </Routes>
       </main>
     </>

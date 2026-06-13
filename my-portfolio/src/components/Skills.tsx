@@ -34,7 +34,29 @@ function SkillCard({skill}:{skill:Skill}){
                     <span className = "skill-card-name">{skill.name}</span>
                     <span className = "skill-card-version">{skill.version}</span>
                 </div>
+
+                <span className = "skill-card-badge" 
+                      style = {{color: config.color, borderColor: config.color}}>
+                    {config.label}
+                </span>
             </div>
+
+            <div className = "skill-bar-bg">
+                <div className = "skill-bar-fill" style = {{width: `${skill.level}%`}}/>
+            </div>
+
+            <ul className="skill-capabilities">
+                {skill.capabilities.map((cap) => (
+                    <li key = {cap} className="skill-cap-tag">
+                        {cap}
+                    </li>
+                ))}
+            </ul>
+            {skill.note && (
+                <p className="skill-note">
+                    <span className="skill-note-icon"></span>
+                </p>
+            )}
         </div>
     )
 }

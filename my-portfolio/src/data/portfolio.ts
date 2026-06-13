@@ -18,7 +18,7 @@ export interface Profile{
 //スキル
 export interface Skill{
     name:string             //名前
-    version:string          //バージョン
+    version:string | null   //バージョン
     level:number            //スキルレベル
     category:string         //カテゴリ－
     capabilities:string[]   //できること
@@ -39,21 +39,23 @@ export interface Work{
     category:string         //カテゴリー
     thumbnail:string        //サムネ
     screenshots:string[]    //スクリーンショット
+    description:string      //説明
     tags:string[]           //タグ
     platform:string[]       //プラットフォーム
     period:string           //期間
     team:string             //作成チーム情報    
     role:string             //担当箇所
-    girhub:string           //GitHubリンク
-    link:string             //公開リンク
+    github:string           //GitHubリンク
+    link:string | null      //公開リンク
     venues:Venue[]          //出展・公開先
     techPoints:string|null  //ポイント
     designNotes:string|null //工夫
-    implmntationTheme:string|null   //テーマ
-    troubleshooting:string|null      //問題・解決
-    perfformance:string|null        //パフォーマンス工夫
+    implementationTheme:string|null//テーマ
+    troubleshooting:string|null//問題・解決
+    performance:string|null //パフォーマンス工夫
 }
  
+//ゲームジャム
 export interface GameJam{
     name:string             //名前
     date:string             //日時
@@ -63,24 +65,25 @@ export interface GameJam{
     role:string             //担当箇所
     team:string             //チーム情報
     result:string|null      //結果
-    url:string|null         //リンク
-    reflection:string       //学び
+    url:string|null         //URL
+    reflection:string       //学び、振り返り
 }
  
-export type CerStatus="取得済み"|"受験予定"|"取得予定"|"学習中";
+export type CertStatus = "取得済み"|"受験予定"|"取得予定"|"学習中";
  
 //資格情報
 export interface Certification{
-    name:string
-    date:string
-    category:string
-    score:string
-    status:CerStatus
+    name:string             //資格名
+    date:string             //日時
+    category:string         //カテゴリー
+    score:string            //スコア
+    status:CertStatus       //ステータス
 }
- 
+
+//年表
 export interface TimeLineItem{
-    year:string
-    event:string
+    year:string             //年
+    event:string            //イベント
 }
  
 export const profile:Profile={
@@ -91,7 +94,7 @@ export const profile:Profile={
     department: "スーパーゲームクリエイター専攻",
     graduationYear: "2028年3月予定",
     bio: "FFが好きです。",
-    motto: "食べちゃうニャン",
+    motto: `食べちゃうニャン`,
     avater: "顔写真だお",
     links: {
         github: "https://github.com/tomato-eater",
@@ -101,11 +104,19 @@ export const profile:Profile={
  
 export const skills:Skill[]=[
     {
-        name: "",
-        version: "",
-        level: 0,
-        category: "",
-        capabilities: [],
+        name: "Unity",
+        version: "6",
+        level: 80,
+        category: "Game Engine",
+        capabilities: ["3D/2DGame制作"],
+        note: null
+    },
+    {
+        name: "Unreal Engine",
+        version: "5",
+        level: 40,
+        category: "Game Engine",
+        capabilities: ["3DGame制作"],
         note: null
     }
 ]
@@ -115,29 +126,33 @@ export const venue:Venue={
     date: ""
 }
  
-export const work:Work={
-    id: 0,
+export const works:Work[]=[
+    {
+    id: 1,
     title: "",
     gener: "",
     category: "",
     thumbnail: "",
     screenshots: [],
+    description: "",
     tags: [],
     platform: [],
     period: "",
     team: "",
     role: "",
-    girhub: "",
-    link: "",
+    github: "",
+    link: null,
     venues: [],
     techPoints: null,
     designNotes: null,
-    implmntationTheme: null,
+    implementationTheme: null,
     troubleshooting: null,
-    perfformance: null
-}
- 
-export const gamejam:GameJam={
+    performance: null
+    }
+]
+
+export const gamejam:GameJam[]=[
+    {
     name: "",
     date: "",
     theme: "",
@@ -148,15 +163,18 @@ export const gamejam:GameJam={
     result: null,
     url: null,
     reflection: ""
-}
- 
-export const certification:Certification={
+    }
+]
+
+export const certifications:Certification[]=[
+    {
     name: "",
     date: "",
     category: "",
     score: "",
     status: "取得済み"
-}
+    }
+]
  
 export const timeline:TimeLineItem[]=[
     {

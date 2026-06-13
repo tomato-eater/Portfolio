@@ -5,6 +5,9 @@ import { useTheme } from "./hooks/useTheme"
 import About from "./components/About"
 import Skills from "./components/Skills"
 import Hero from "./components/Hero"
+import Works from "./components/Works"
+import WorkDetail from "./pages/WorkDetail"
+import Certifications from "./components/Certifications"
 
 function HomePage(){
  	return(
@@ -12,6 +15,8 @@ function HomePage(){
       <Hero/>
 	    <About/>
 	    <Skills/>
+      <Works/>
+      <Certifications/>
    	</>
  	 )
 }
@@ -25,6 +30,7 @@ export default function App(){
       <main>
         <Routes>
           <Route path = "/" element = {<HomePage />} />
+          <Route path = "/works/:id" element = {<WorkDetail/>} />
         </Routes>
       </main>
     </>

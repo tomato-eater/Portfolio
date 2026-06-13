@@ -5,7 +5,7 @@ export default function About(){
         <section className = "section" id = "about">
             <div className = "section" id = "about">
                 <h2 className = "section-title"><span>About</span></h2>
-                <p className = "section-sub">自己紹介</p>
+                <p className = "section-sub"> 自己紹介 </p>
 
                 <div className = "about-grid">
                     <div className = "about-card">
@@ -21,8 +21,8 @@ export default function About(){
                             </div>
 
                             <div className = "profile-school-row">
-                                <dt>学科</dt>
-                                <dd>{profile.school}</dd>
+                                <dt>専攻</dt>
+                                <dd>{profile.department}</dd>
                             </div>
                             
                             <div className = "profile-school-row">

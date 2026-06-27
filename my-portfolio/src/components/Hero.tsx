@@ -32,8 +32,8 @@ export default function Hero(){
                 &nbsp;
 
                 <div className = "hero-actions">
-                    <a href="#works" className = "btn btn-primary">制作物を見る</a>
-                    <a href="contact" className = "btn btn-outline">連絡する</a>
+                    <a href = "#works" className = "btn btn-primary">制作物を見る</a>
+                    <a href = "#contact" className = "btn btn-outline">連絡する</a>
                 </div>
 
                </div>

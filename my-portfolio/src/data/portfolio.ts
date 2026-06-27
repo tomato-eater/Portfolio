@@ -93,7 +93,7 @@ export const profile:Profile = {
     role: "プログラマー",
     school: "京都デザイン＆テクノロジー専門学校",
     department: "スーパーゲームクリエイター専攻",
-    graduationYear: "2028年3月予定",
+    graduationYear: "2028年3月卒業見込み",
     bio: "おらおら\nむだむだ",
     motto: "出来る 出来ない の問題じゃない\nやるしかなければ,やるだけだ。",
     avater: "/images/KaoSyaShin.jpg",

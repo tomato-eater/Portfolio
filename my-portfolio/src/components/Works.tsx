@@ -6,26 +6,20 @@ function WorkCard({work}: {work:Work}){
     return(
         <article className = "work-card">
             <div className = "work-thumbnail">
-                <SafeImg 
-                    src = {work.thumbnail}
-                    alt = {work.title}
-                    fallback = "No Image..."/>
+                <SafeImg src = {work.thumbnail} alt = {work.title} fallback = "No Image..."/>
             </div>
+
             <div className = "work-body">
                 <p className = "work-category-badge">{work.gener}</p>
                 <h3 className = "work-title">{work.title}</h3>
                 <p className = "work-description">{work.description}</p>
-                <p className = "work-meta">期間:
-                    <span >{work.period}</span>
-                </p>
-                <p className = "work-meta">プラットフォーム:
-                    <span>{work.platform?.join(' / ')}</span>
-                </p>
+                <p className = "work-meta">期間:<span >{work.period}</span></p>
+                <p className = "work-meta">プラットフォーム:<span>{work.platform?.join(' / ')}</span></p>
 
                 {/*出店場所表示*/}
                 {work.venues?.length > 0 &&(
                     <div className = "work-venues">
-                        {work.venues.map((v,i)=>(
+                        {work.venues.map((v, i) => (
                             <span key = {i} className = "work-venue-tag">
                                 📍{v.name}{v.date}
                             </span>
@@ -42,24 +36,23 @@ function WorkCard({work}: {work:Work}){
                 {/*リンク表示*/}
                 <div className = "work-links">
                     <Link to = {`/works/${work.id}`}
-                        className = "btn btn-primary work-btn">
+                          className = "btn btn-primary work-btn">
                         詳細を見る→
                     </Link>
 
                     {work.github && (
                         <a href = {work.github}
-                            className = "btn btn-outline work-btn"
-                            target = "_blank"
-                            rel = "noreferrer">
+                           className = "btn btn-outline work-btn"
+                           target = "_blank"
+                           rel = "noreferrer">
                             Github
                         </a>
                     )}
-                    
                     {work.link && (
                         <a href = {work.link}
-                            className = "btn btn-outline work-btn"
-                            target = "_blank"
-                            rel = "noreferrer">
+                           className = "btn btn-outline work-btn"
+                           target = "_blank"
+                           rel = "noreferrer">
                             Live Demo
                         </a>
                     )}
@@ -83,7 +76,6 @@ export default function Works(){
                         <WorkCard key = {work.id} work = {work}/>
                     ))}
                 </div>
-
             </div>
         </section>
     )

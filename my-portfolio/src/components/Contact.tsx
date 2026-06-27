@@ -10,27 +10,26 @@ export default function Contact(){
         {label:'SNS', icon:<FaXTwitter/>, href:profile.links.twitter}
     ]
     return(
-        <section className="section" id ="contact">
-            <div className="container">
+        <section className = "section" id = "contact">
+            <div className = "container">
                 <div contact-inner>
-                    <h2 className="section-title">
+                    <h2 className = "section-title">
                         <span>Contact</span>
                     </h2>
-                    <p className="section-sub">連絡先</p>
-                    <div className="contact-links">
-                        {links
-                            .filter((link): link is typeof link & {href: string}=>link.href !==null)
-                            .map((link) => (
-                            <a
-                                key = {link.label}
-                                href = {link.href}
-                                className = "contact-link-item"
-                                target = {link.href.startsWith('mailt')?undefined:'_blank'}
-                                rel = "noreferrer">
+                    <p className = "section-sub">連絡先</p>
 
-                                <span className="contact-link-icon">
-                                    {link.icon}
-                                </span>
+                    <p className="section-sub"></p>
+
+                    <div className = "contact-links">
+                        {links.filter((link): link is typeof link & {href: string} => link.href !== null)
+                              .map((link) => (
+                            <a key = {link.label}
+                               href = {link.href}
+                               className = "contact-link-item"
+                               target = {link.href.startsWith('mailto') ? undefined: '_blank'}
+                               rel = "noreferrer">
+
+                                <span className = "contact-link-icon">{link.icon}</span>
                                 {link.label}
                             </a>
                         ))}

@@ -12,7 +12,7 @@ function StatusBadge({status} : {status: CertStatus}){
     return(
         <span 
             className = "cert-status"
-            style = {{color:cfg.color, background:cfg.bg, borderColor:cfg.border}}>
+            style = {{color: cfg.color, background: cfg.bg, borderColor: cfg.border}}>
             {status}
         </span>
     )
@@ -39,7 +39,7 @@ function CertRow({cert} : {cert: Certification}){
 
 export default function Certifications(){
     return(
-        <section className = "section" id="certifications">
+        <section className = "section" id = "certifications">
             <div className = "container">
                 <h2 className = "section-title">
                     <span>Certifications</span>

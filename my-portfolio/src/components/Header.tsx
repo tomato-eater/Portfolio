@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { profile } from "../data/portfolio";
-import { FaSun, FaMoon} from "react-icons/fa6";
+import { FaSun} from "react-icons/fa";
+import { FaMoon} from "react-icons/fa6";
 
 interface Props{
     theme:string;
@@ -9,27 +10,25 @@ interface Props{
 
 export default function Header({theme, onThemeToggle}:Props){
     const navItems = [
-        {label:"About", hash:"about"},
-        {label:"Skils", hash:"skils"},
-        {label:"Works", hash:"works"},
-        {label:"Certs", hash:"certifications"},
-        {label:"Contact", hash:"contact"},
+        {label: "About",   hash: "about"},
+        {label: "Skils",   hash: "skills"},
+        {label: "Works",   hash: "works"},
+        {label: "Certs",   hash: "certifications"},
+        {label: "Contact", hash: "contact"},
     ];
     return(
         <header className = "header">
             <div className = "container">
                 <div className = "header-inner">
                     {/*ロゴ表示部分*/}
-                    <Link to="/" className = "header-logo">
+                    <Link to = "/" className = "header-logo">
                         {profile.nameEn.split("")[0]}<span>.</span>
                     </Link>
                     <nav>
                         <ul className = "header-nav">
                             {navItems.map((item) => (
                                 <li key = {item.label}>
-                                    <Link to = {`/#${item.hash}`}>
-                                        {item.label}
-                                    </Link>
+                                    <Link to = {`/#${item.hash}`}>{item.label}</Link>
                                 </li>
                             ))}
                         </ul>
@@ -37,9 +36,9 @@ export default function Header({theme, onThemeToggle}:Props){
                     
                    <button
                         className = "theme-toggle"
-                        onClick = { onThemeToggle }
-                        aria-label = { theme === 'dark' ? 'ライトモードに切り替え' : 'ダークモードに切り替え' }>
-                        {theme === 'dark' ? <FaSun/>:<FaMoon/>}
+                        onClick = {onThemeToggle}
+                        aria-label = {theme === 'dark' ? 'ライトモードに切り替え' : 'ダークモードに切り替え'}>
+                        {theme === 'dark' ? <FaSun/> : <FaMoon/>}
                     </button>
 
                 </div>

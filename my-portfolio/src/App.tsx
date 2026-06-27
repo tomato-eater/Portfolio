@@ -9,6 +9,7 @@ import Works from "./components/Works"
 import WorkDetail from "./pages/WorkDetail"
 import Certifications from "./components/Certifications"
 import Contact from "./components/Contact"
+import Footer from "./components/Footer"
 
 function HomePage(){
  	return(
@@ -35,6 +36,7 @@ export default function App(){
           <Route path = "/works/:id" element = {<WorkDetail/>} />
         </Routes>
       </main>
+      <Footer/>
     </>
   )
 }

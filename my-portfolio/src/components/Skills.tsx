@@ -1,36 +1,36 @@
 import { useState } from "react";
 import { type Skill, skills } from "../data/portfolio";
 
-const CATEGORY_LABELS:Record<string,string>={
-    all:'すべて',
-    game:'ゲーム',
-    web:'Web',
-    language:'言語'
+const CATEGORY_LABELS: Record<string, string> = {
+    all: 'すべて',
+    game: 'ゲーム',
+    web: 'Web',
+    language: '言語'
 }
 
 interface LevelConfig{
-    max:number,
-    label:string,
-    color:string
+    max: number,
+    label: string,
+    color: string
 }
 
-const LEVEL_CONFIG: LevelConfig[]=[
-    {max:40,label:'学習中',color:'#888'}, 
-    {max:60,label:'基礎あり',color:'#60A5FA'}, 
-    {max:80,label:'実践可',color:'#A78BFA'}, 
-    {max:100,label:'得意',color:'#F47286'}, 
+const LEVEL_CONFIG: LevelConfig[] = [
+    {max: 40,  label: '学習中',   color: '#888'}, 
+    {max: 60,  label: '基礎あり', color: '#60A5FA'}, 
+    {max: 80,  label: '実践可',   color: '#A78BFA'}, 
+    {max: 100, label: '得意',     color: '#F47286'}, 
 ]
 
-function getLevelConfig(level:number):LevelConfig{
+function getLevelConfig(level:number): LevelConfig{
     return LEVEL_CONFIG.find((l) => level < l.max) ?? LEVEL_CONFIG.at(-1)!
 }
 
-function SkillCard({skill}:{skill:Skill}){
-    const config = getLevelConfig(skill.level)
+function SkillCard({skill}: {skill:Skill}){
+    const config = getLevelConfig(skill.level);
     return(
         <div className = "skill-card">
             <div className = "skill-card-header">
-                <div className = "skill-card-info">
+                <div className = "skill-card-title-row">
                     <span className = "skill-card-name">{skill.name}</span>
                     <span className = "skill-card-version">{skill.version}</span>
                 </div>
@@ -45,16 +45,15 @@ function SkillCard({skill}:{skill:Skill}){
                 <div className = "skill-bar-fill" style = {{width: `${skill.level}%`}}/>
             </div>
 
-            <ul className="skill-capabilities">
+            <ul className = "skill-capabilities">
                 {skill.capabilities.map((cap) => (
-                    <li key = {cap} className="skill-cap-tag">
-                        {cap}
-                    </li>
+                    <li key = {cap} className="skill-cap-tag">{cap}</li>
                 ))}
             </ul>
             {skill.note && (
                 <p className="skill-note">
                     <span className="skill-note-icon"></span>
+                    {skill.note}
                 </p>
             )}
         </div>
@@ -62,25 +61,27 @@ function SkillCard({skill}:{skill:Skill}){
 }
 
 export default function Skills(){
-    const [activeCategory,setActiveCategory] = useState('all')
-    const categories = ['all',...new Set(skills.map((s) => (s.category)))]
-    const filtered = activeCategory === 'all' ?skills : skills.filter((s) => s.category===activeCategory)
+    const [activeCategory, setActiveCategory] = useState('all');
+    const categories = ['all', ...new Set(skills.map((s) => (s.category)))];
+    const filtered = activeCategory === 'all' ? skills : skills.filter((s) => s.category === activeCategory);
 
     return (
-        <section className = "section" id="skills">
+        <section className = "section" id = "skills">
             <div className = "container">
                 <h2 className = "section-title"><span>Skills</span></h2>
                 <p className = "section-sub">技術スタック</p>
                 <div className = "skills-categories">
-                    {categories.map((cat)=>(
-                        <button key={cat} className={`skill-filter-btn $ {activeCategory===cat ? 'active':''}`} onClick = {() => setActiveCategory(cat)}>
+                    {categories.map((cat) => (
+                        <button key = {cat} 
+                                className = {`skill-filter-btn $ {activeCategory === cat ? "active":""}`} 
+                                onClick = {() => setActiveCategory(cat)}>
                             {CATEGORY_LABELS[cat] ?? cat}
                         </button>
                     ))}
                 </div>
 
                 <div className = "skill-grid">
-                    {filtered.map((skill) => (<SkillCard key={skill.name} skill={skill}/>))}
+                    {filtered.map((skill) => (<SkillCard key = {skill.name} skill = {skill}/>))}
                 </div>
             </div>
         </section>

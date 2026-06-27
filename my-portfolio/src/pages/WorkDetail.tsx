@@ -3,7 +3,7 @@ import { works } from "../data/portfolio";
 import SafeImg from "../components/SafeImg";
 import type { ReactNode } from "react";
 
-function Section({title, children}:{title:string; children:ReactNode}){
+function Section({title, children}: {title:string; children:ReactNode}){
     return(
         <div className = "wd-section">
             <h2 className = "wd-section-title">{title}</h2>
@@ -12,7 +12,7 @@ function Section({title, children}:{title:string; children:ReactNode}){
     )
 }
 
-function MetaRow({label, value}:{label:string; value:string | undefined;}){
+function MetaRow({label, value}: {label:string; value:string | undefined;}){
     return(
         <div className = "wd-meta-row">
             <dt className = "wd-meta-label">{label}</dt>
@@ -30,16 +30,13 @@ export default function WorkDetail(){
     return(
         <div className = "wd-page">
             <div className = "container">
-                <Link to = "/#works" className = "wd-back">
-                    ←作品一覧に戻る
-                </Link>
+                <Link to = "/#works" className = "wd-back">←作品一覧に戻る</Link>
 
                 <div className = "wd-hero">
                     <div className = "wd-hero-thumbnail">
-                        <SafeImg
-                            src = {work.thumbnail}
-                            alt = {work.title}
-                            fallback = "No Image..."/>
+                        <SafeImg src = {work.thumbnail}
+                                 alt = {work.title}
+                                 fallback = "No Image..."/>
                     </div>
                     <div className = "wd-hero-info">
                         <p className = "work-category-badge">{work.gener}</p>
@@ -65,22 +62,22 @@ export default function WorkDetail(){
                     )}
                     {work.designNotes &&(
                         <Section title = "設計上の工夫">
-                            <p className = "wd-text">{work.techPoints}</p>
+                            <p className = "wd-text">{work.designNotes}</p>
                         </Section>
                     )}
                     {work.implementationTheme &&(
                         <Section title = "実装解説">
-                            <p className = "wd-text">{work.techPoints}</p>
+                            <p className = "wd-text">{work.implementationTheme}</p>
                         </Section>
                     )}
                     {work.troubleshooting &&(
                         <Section title = "詰まった問題点と解決策">
-                            <p className = "wd-text">{work.techPoints}</p>
+                            <p className = "wd-text">{work.troubleshooting}</p>
                         </Section>
                     )}
                     {work.performance &&(
                         <Section title = "パフォーマンス改善の工夫">
-                            <p className = "wd-text">{work.techPoints}</p>
+                            <p className = "wd-text">{work.performance}</p>
                         </Section>
                     )}
 

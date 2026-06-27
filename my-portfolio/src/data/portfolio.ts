@@ -11,7 +11,7 @@ export interface Profile{
     avater: string          //顔写真等
     links:{
         github:string       //GitHubリンク
-        email:string|null        //Email
+        email:string|null   //Email
         twitter:string|null //Xリンク
     }
 }
@@ -77,7 +77,7 @@ export interface Certification{
     name:string             //資格名
     date:string             //日時
     category:string         //カテゴリー
-    score:string            //スコア
+    score:string | null     //スコア
     status:CertStatus       //ステータス
 }
 
@@ -87,16 +87,16 @@ export interface TimeLineItem{
     event:string            //イベント
 }
  
-export const profile:Profile={
-    name: "増井司",
+export const profile:Profile = {
+    name: "増井 司",
     nameEn: "Masui Tsukasa",
     role: "プログラマー",
     school: "京都デザイン＆テクノロジー専門学校",
     department: "スーパーゲームクリエイター専攻",
     graduationYear: "2028年3月予定",
-    bio: "",
-    motto: "",
-    avater: "/images/Noct.jpg",
+    bio: "おらおら\nむだむだ",
+    motto: "出来る 出来ない の問題じゃない\nやるしかなければ,やるだけだ。",
+    avater: "/images/KaoSyaShin.jpg",
     links: {
         github: "https://github.com/tomato-eater",
         email: "mtsukasa0510@gmail.com",
@@ -104,21 +104,45 @@ export const profile:Profile={
     }
 }
  
-export const skills:Skill[]=[
+export const skills:Skill[] = [
     {
         name: "Unity",
         version: "6",
-        level: 80,
+        level: 85,
         category: "Game Engine",
-        capabilities: ["3D/2DGame制作"],
+        capabilities: ["2D/3D Game制作"],
         note: null
     },
     {
         name: "Unreal Engine",
         version: "5",
-        level: 40,
+        level: 15,
         category: "Game Engine",
         capabilities: ["3DGame制作"],
+        note: null
+    },
+    {
+        name: "Blender",
+        version: "5.1",
+        level: 60,
+        category: "DCC Tool",
+        capabilities: ["オブジェクト作成","アニメーション作成"],
+        note: "独学"
+    },
+    {
+        name: "Maya",
+        version: null,
+        level: 50,
+        category: "DCC Tool",
+        capabilities: ["オブジェクト作成","アニメーション作成"],
+        note: null
+    },
+    {
+        name: "Zbrush",
+        version: "2026.2.0.1",
+        level: 25,
+        category: "DCC Tool",
+        capabilities: ["オブジェクト作成"],
         note: null
     }
 ]
@@ -170,9 +194,9 @@ export const gamejam:GameJam[]=[
 
 export const certifications:Certification[]=[
     {
-    name: "",
-    date: "",
-    category: "",
+    name: "第二種電気工事士",
+    date: "令和4年9月16日",
+    category: "国家試験",
     score: "",
     status: "取得済み"
     }
@@ -180,7 +204,15 @@ export const certifications:Certification[]=[
  
 export const timeline:TimeLineItem[]=[
     {
-        year: "",
-        event: ""
+        year: "2024/3",
+        event: "滋賀県立瀬田工業高校 卒業"
+    },
+    {
+        year: "2024/4",
+        event: "京都デザイン＆テクノロジー専門学校 入学"
+    },
+    {
+        year: "2028/3",
+        event: "京都デザイン＆テクノロジー専門学校 卒業見込み"
     }
 ]

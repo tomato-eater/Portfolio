@@ -6,11 +6,11 @@ export default function Hero(){
        	<section className = "hero section" id = "hero">
              <div className = "container">
 
-                <div className = "avater-placeholder">
+                <div className = "avatar-placeholder">
                     <SafeImg
-                        src={profile.avater}
-                        alt={profile.name}
-                        fallback={profile.nameEn.charAt(0)}/>
+                        src = {profile.avater}
+                        alt = {profile.name}
+                        fallback = {profile.nameEn.charAt(0)}/>
                 </div>
                 <p className = "hero-eyebrow">Portfolio</p>
 
@@ -22,12 +22,14 @@ export default function Hero(){
                 <p className = "hero-role">{profile.role}</p>
                 {/*座右の銘表示*/}
                 {profile.motto && (
-                     <blockquote className = "hero-motto-mark">
+                    <blockquote className = "hero-motto">
                         <span className = "hero-motto-mark">"</span>
-                        {profile.motto}
-                        <span className = "hero-motto-mark"></span>
+                        <p className="hero-motto-text">{profile.motto}</p>
+                        <span className = "hero-motto-mark">"</span>
                     </blockquote>
                 )}
+
+                &nbsp;
 
                 <div className = "hero-actions">
                     <a href="#works" className = "btn btn-primary">制作物を見る</a>

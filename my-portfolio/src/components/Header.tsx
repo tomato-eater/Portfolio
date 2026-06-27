@@ -1,21 +1,27 @@
 import { Link } from "react-router-dom";
 import { profile } from "../data/portfolio";
+import { FaSun, FaMoon} from "react-icons/fa6";
 
 interface Props{
     theme:string;
-    onThemeToggle:()=>void;
+    onThemeToggle:() => void;
 }
 
-export default function Header({theme,onThemeToggle}:Props){
-    const navItems = [{label: "About", hash: "about"}];
+export default function Header({theme, onThemeToggle}:Props){
+    const navItems = [
+        {label:"About", hash:"about"},
+        {label:"Skils", hash:"skils"},
+        {label:"Works", hash:"works"},
+        {label:"Certs", hash:"certifications"},
+        {label:"Contact", hash:"contact"},
+    ];
     return(
         <header className = "header">
             <div className = "container">
                 <div className = "header-inner">
                     {/*ロゴ表示部分*/}
                     <Link to="/" className = "header-logo">
-                        {profile.nameEn.split("")[0]}
-                        <span>.</span>
+                        {profile.nameEn.split("")[0]}<span>.</span>
                     </Link>
                     <nav>
                         <ul className = "header-nav">
@@ -33,7 +39,7 @@ export default function Header({theme,onThemeToggle}:Props){
                         className = "theme-toggle"
                         onClick = { onThemeToggle }
                         aria-label = { theme === 'dark' ? 'ライトモードに切り替え' : 'ダークモードに切り替え' }>
-                        {theme === 'dark' ? '☀':'🌙'}
+                        {theme === 'dark' ? <FaSun/>:<FaMoon/>}
                     </button>
 
                 </div>

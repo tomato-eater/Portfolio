@@ -11,6 +11,7 @@ export interface Profile{
     avater: string          //顔写真等
     links:{
         github:string       //GitHubリンク
+        email:string|null        //Email
         twitter:string|null //Xリンク
     }
 }
@@ -93,11 +94,12 @@ export const profile:Profile={
     school: "京都デザイン＆テクノロジー専門学校",
     department: "スーパーゲームクリエイター専攻",
     graduationYear: "2028年3月予定",
-    bio: "FFが好きです。",
-    motto: `食べちゃうニャン`,
-    avater: "顔写真だお",
+    bio: "",
+    motto: "",
+    avater: "/images/Noct.jpg",
     links: {
         github: "https://github.com/tomato-eater",
+        email: "mtsukasa0510@gmail.com",
         twitter: null
     }
 }
@@ -132,7 +134,7 @@ export const works:Work[]=[
     title: "",
     gener: "",
     category: "",
-    thumbnail: "",
+    thumbnail: "/images/games/",
     screenshots: [],
     description: "",
     tags: [],

@@ -1,11 +1,7 @@
 {
-	"folders": [
-		{
-			"path": "my-portfolio"
-		},
-		{
-			"path": "."
-		}
-	],
-	"settings": {}
+    "folders": [
+        {
+            "path": "."
+        }
+    ]
 }

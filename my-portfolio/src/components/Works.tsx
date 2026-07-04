@@ -13,8 +13,8 @@ function WorkCard({work}: {work:Work}){
                 <p className = "work-category-badge">{work.gener}</p>
                 <h3 className = "work-title">{work.title}</h3>
                 <p className = "work-description">{work.description}</p>
-                <p className = "work-meta">期間:<span >{work.period}</span></p>
-                <p className = "work-meta">プラットフォーム:<span>{work.platform?.join(' / ')}</span></p>
+                <p className = "work-meta">期間: <span >{work.period}</span></p>
+                <p className = "work-meta">プラットフォーム: <span>{work.platform?.join(' / ')}</span></p>
 
                 {/*出店場所表示*/}
                 {work.venues?.length > 0 &&(

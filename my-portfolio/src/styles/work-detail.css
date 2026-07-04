@@ -244,6 +244,7 @@
 
   .wd-meta-grid {
     grid-template-columns: 1fr;
+    white-space:  pre-line;
   }
 
   .wd-tech-grid {

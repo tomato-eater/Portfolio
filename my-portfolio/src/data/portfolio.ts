@@ -94,8 +94,8 @@ export const profile:Profile = {
     school: "京都デザイン＆テクノロジー専門学校",
     department: "スーパーゲームクリエイター専攻",
     graduationYear: "2028年3月卒業見込み",
-    bio: "おらおら\nむだむだ",
-    motto: "出来る 出来ない の問題じゃない\nやるしかなければ,やるだけだ。",
+    bio: "",
+    motto: "出来る 出来ない の問題じゃない\nやるしかなければ、やるだけだ。",
     avater: "/images/KaoSyaShin.jpg",
     links: {
         github: "https://github.com/tomato-eater",
@@ -116,7 +116,7 @@ export const skills:Skill[] = [
     {
         name: "Unreal Engine",
         version: "5",
-        level: 15,
+        level: 19,
         category: "Game Engine",
         capabilities: ["3DGame制作"],
         note: null
@@ -132,7 +132,7 @@ export const skills:Skill[] = [
     {
         name: "Maya",
         version: null,
-        level: 50,
+        level: 40,
         category: "DCC Tool",
         capabilities: ["オブジェクト作成","アニメーション作成"],
         note: null
@@ -140,9 +140,17 @@ export const skills:Skill[] = [
     {
         name: "Zbrush",
         version: "2026.2.0.1",
-        level: 25,
+        level: 50,
         category: "DCC Tool",
         capabilities: ["オブジェクト作成"],
+        note: null
+    },
+    {
+        name: "DirectX",
+        version: "12",
+        level: 40,
+        category: "DirectX",
+        capabilities: ["3Dモデルの描画"],
         note: null
     }
 ]
@@ -155,18 +163,18 @@ export const venue:Venue={
 export const works:Work[]=[
     {
     id: 1,
-    title: "",
-    gener: "",
-    category: "",
+    title: "LostMemory",
+    gener: "2Dアクション",
+    category: "合同制作",
     thumbnail: "/images/games/",
     screenshots: [],
-    description: "",
+    description: "ソウルライクアクションゲーム",
     tags: [],
-    platform: [],
-    period: "",
-    team: "",
-    role: "",
-    github: "",
+    platform: ["Windows"],
+    period: "約12か月",
+    team: "プランナー: 1人\nプログラマー: 2人\nデザイナー: 2人",
+    role: "敵のAI設計と実装\n武器の実装",
+    github: "https://github.com/rukarukahamada/LostMemory",
     link: null,
     venues: [],
     techPoints: null,

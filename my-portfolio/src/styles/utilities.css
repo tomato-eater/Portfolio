@@ -35,8 +35,8 @@
 /* セクション見出し下のサブテキスト */
 .section-sub {
   color: var(--color-text-muted);
-  font-size: 0.95rem;
-  margin-bottom: 56px;
+  font-size: 1.25rem;
+  margin-bottom: 15px;
 }
 
 /* スキル・カテゴリなどの小さなラベル */

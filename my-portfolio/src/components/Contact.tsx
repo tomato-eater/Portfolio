@@ -1,6 +1,6 @@
 import { profile } from "../data/portfolio";
 import type { ReactNode } from "react";
-import { FaEnvelope, FaGithub } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import Message from "./Message";
 

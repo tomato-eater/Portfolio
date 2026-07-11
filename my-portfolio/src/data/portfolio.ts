@@ -94,7 +94,7 @@ export const profile:Profile = {
     school: "京都デザイン＆テクノロジー専門学校",
     department: "スーパーゲームクリエイター専攻",
     graduationYear: "2028年3月卒業見込み",
-    bio: "",
+    bio: "高校生の頃、ゲームを遊ぶ側だけではなく作る側も体験しようと思い、UnityやBlenderを用いて脱出ゲームを制作しました。\nその際、制作する事の大変さや楽しさ、完成時の達成感を知り、今後も続けていきたいと思っのでゲーム関係の勉強ができる専門学校に進学を決意しました。\n",
     motto: "出来る 出来ない の問題じゃない\nやるしかなければ、やるだけだ。",
     avater: "/images/KaoSyaShin.jpg",
     links: {
@@ -150,7 +150,7 @@ export const skills:Skill[] = [
         version: "12",
         level: 40,
         category: "DirectX",
-        capabilities: ["3Dモデルの描画"],
+        capabilities: ["イラストや3Dモデルの描画"],
         note: null
     }
 ]
@@ -173,7 +173,7 @@ export const works:Work[]=[
     platform: ["Windows"],
     period: "約12か月",
     team: "プランナー: 1人\nプログラマー: 2人\nデザイナー: 2人",
-    role: "敵のAI設計と実装\n武器の実装",
+    role: "敵のAI設計、武器、プレイヤー",
     github: "https://github.com/rukarukahamada/LostMemory",
     link: null,
     venues: [],
@@ -182,6 +182,50 @@ export const works:Work[]=[
     implementationTheme: null,
     troubleshooting: null,
     performance: null
+    },
+    {
+        id: 2,
+        title: "カイロス計画",
+        gener: "2.5D脱出",
+        category: "合同制作",
+        thumbnail: "/images/games/",
+        screenshots: [],
+        description: "脱出ゲーム",
+        tags: [],
+        platform: ["Windows"],
+        period: "約3か月",
+        team: "プランナー: 1人\nプログラマー: 3人\nデザイナー: 2人",
+        role: "アイテムやギミックの実装",
+        github: "https://github.com/ku-zabu/kairosukeikaku",
+        link: null,
+        venues: [],
+        techPoints: null,
+        designNotes: null,
+        implementationTheme: null,
+        troubleshooting: null,
+        performance: null
+    },
+    {
+        id: 3,
+        title: "カスタムソルジャー",
+        gener: "2Dアクション",
+        category: "個人制作",
+        thumbnail: "/images/games/",
+        screenshots: [],
+        description: "ハンティングアクション",
+        tags: [],
+        platform: ["Windows"],
+        period: "約3週間",
+        team: "プログラマー: 1人",
+        role: "敵やプレイヤー、タイトル画面等",
+        github: "https://github.com/tomato-eater/GPIII-01-2DGame",
+        link: null,
+        venues: [],
+        techPoints: null,
+        designNotes: null,
+        implementationTheme: "授業で習った [UniTask Stateパターン MVPパターン Singletonパターン]の何れかを使用して、自由にゲーム制作する課題",
+        troubleshooting: null,
+        performance: null
     }
 ]
 
@@ -205,7 +249,7 @@ export const certifications:Certification[]=[
     name: "第二種電気工事士",
     date: "令和4年9月16日",
     category: "国家試験",
-    score: "",
+    score: "84点",
     status: "取得済み"
     }
 ]

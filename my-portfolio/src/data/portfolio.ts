@@ -11,7 +11,6 @@ export interface Profile{
     avater: string          //顔写真等
     links:{
         github:string       //GitHubリンク
-        email:string|null   //Email
         twitter:string|null //Xリンク
     }
 }
@@ -94,16 +93,31 @@ export const profile:Profile = {
     school: "京都デザイン＆テクノロジー専門学校",
     department: "スーパーゲームクリエイター専攻",
     graduationYear: "2028年3月卒業見込み",
-    bio: "高校生の頃、ゲームを遊ぶ側だけではなく作る側も体験しようと思い、UnityやBlenderを用いて脱出ゲームを制作しました。\nその際、制作する事の大変さや楽しさ、完成時の達成感を知り、今後も続けていきたいと思っのでゲーム関係の勉強ができる専門学校に進学を決意しました。\n",
-    motto: "出来る 出来ない の問題じゃない\nやるしかなければ、やるだけだ。",
+    bio: "私は、どんなことにも苦手意識を持たず、楽しんで挑戦できることが強みです。",
+    motto: "目新しいことに挑み、楽しむ姿勢",
     avater: "/images/KaoSyaShin.jpg",
     links: {
         github: "https://github.com/tomato-eater",
-        email: "mtsukasa0510@gmail.com",
         twitter: null
     }
 }
+ /*
+ **【結論：モットーの提示】**
+私のモットーは「目新しいことに挑み、楽しむ姿勢」です。技術の進化が激しいゲーム業界において、未知のツールや技術に好奇心を持って飛び込み、習得のプロセスそのものを楽しむことを大切にしています。 
+
+**【背景・エピソード：創作活動での具体例】**
+独学でプログラミングと3DCGを学ぶ中で、この姿勢を発揮してきました。当初は[例：Blenderでのモデリング]のみを行っていましたが、表現の幅を広げるために[例：UnityやUnreal Engine]を用いたゲーム開発という未知の領域に挑戦しました。 
+
+**【直面した壁と、それをどう「楽しんだ」か】**
+最初は、3Dモデルをプログラムで意図通りに動かす際、[例：バグの多発や、最適化の難しさ]という壁に直面しました。しかし、私はそれを「新しいパズルを解くような成長のチャンス」と捉え、海外の最新リファレンスを調べたり、新しいアセットやシェーダーを積極的に試したりして、課題解決のプロセスを徹底的に楽しみました。 
+
+**【成果】**
+その結果、[例：個人で一本のゲームを完成させ、〇〇で公開してフィードバックを得る／3DCGとプログラムが連動した、より高度な表現ができるようになり、作品のクオリティが大幅に向上する]という成果を得ました。 
+
+**【結び：企業への貢献】**
+この「新しい技術を恐れず、むしろワクワクしながら吸収する力」を活かし、御社でも常に最新のトレンドや開発手法を取り入れ、プレイヤーに今までにない「目新しいおもしろさ」を届けるクリエイターとして貢献いたします。
  
+ */
 export const skills:Skill[] = [
     {
         name: "Unity",
@@ -116,7 +130,7 @@ export const skills:Skill[] = [
     {
         name: "Unreal Engine",
         version: "5",
-        level: 19,
+        level: 38,
         category: "Game Engine",
         capabilities: ["3DGame制作"],
         note: null
@@ -132,7 +146,7 @@ export const skills:Skill[] = [
     {
         name: "Maya",
         version: null,
-        level: 40,
+        level: 50,
         category: "DCC Tool",
         capabilities: ["オブジェクト作成","アニメーション作成"],
         note: null
@@ -140,19 +154,11 @@ export const skills:Skill[] = [
     {
         name: "Zbrush",
         version: "2026.2.0.1",
-        level: 50,
+        level: 68,
         category: "DCC Tool",
         capabilities: ["オブジェクト作成"],
         note: null
     },
-    {
-        name: "DirectX",
-        version: "12",
-        level: 40,
-        category: "DirectX",
-        capabilities: ["イラストや3Dモデルの描画"],
-        note: null
-    }
 ]
  
 export const venue:Venue={
@@ -169,15 +175,15 @@ export const works:Work[]=[
     thumbnail: "/images/games/",
     screenshots: [],
     description: "ソウルライクアクションゲーム",
-    tags: [],
+    tags: ["合同制作"],
     platform: ["Windows"],
-    period: "約12か月",
+    period: "約10か月",
     team: "プランナー: 1人\nプログラマー: 2人\nデザイナー: 2人",
-    role: "敵のAI設計、武器、プレイヤー",
+    role: "敵のAI、プレイヤーの攻撃、武器",
     github: "https://github.com/rukarukahamada/LostMemory",
     link: null,
     venues: [],
-    techPoints: null,
+    techPoints: "ScriptableObjectを使用(初めて)して、武器データを作成した。",
     designNotes: null,
     implementationTheme: null,
     troubleshooting: null,
@@ -185,13 +191,35 @@ export const works:Work[]=[
     },
     {
         id: 2,
+        title: "カスタムソルジャー",
+        gener: "2Dアクション",
+        category: "個人制作",
+        thumbnail: "/images/games/",
+        screenshots: [],
+        description: "ハンティングアクション",
+        tags: ["個人製作"],
+        platform: ["Windows"],
+        period: "約3週間",
+        team: "プログラマー: 1人",
+        role: "敵やプレイヤー、タイトル画面等のプログラム",
+        github: "https://github.com/tomato-eater/GPIII-01-2DGame",
+        link: null,
+        venues: [],
+        techPoints: "セーブ・ロードとデータ削除を実装した。",
+        designNotes: "Playerと敵のScriptをclass継承で作成し、ダメージ計算等を簡略化した。",
+        implementationTheme: "",
+        troubleshooting: "",
+        performance: ""
+    },
+    {
+        id: 3,
         title: "カイロス計画",
         gener: "2.5D脱出",
         category: "合同制作",
         thumbnail: "/images/games/",
         screenshots: [],
         description: "脱出ゲーム",
-        tags: [],
+        tags: ["合同制作"],
         platform: ["Windows"],
         period: "約3か月",
         team: "プランナー: 1人\nプログラマー: 3人\nデザイナー: 2人",
@@ -205,28 +233,6 @@ export const works:Work[]=[
         troubleshooting: null,
         performance: null
     },
-    {
-        id: 3,
-        title: "カスタムソルジャー",
-        gener: "2Dアクション",
-        category: "個人制作",
-        thumbnail: "/images/games/",
-        screenshots: [],
-        description: "ハンティングアクション",
-        tags: [],
-        platform: ["Windows"],
-        period: "約3週間",
-        team: "プログラマー: 1人",
-        role: "敵やプレイヤー、タイトル画面等",
-        github: "https://github.com/tomato-eater/GPIII-01-2DGame",
-        link: null,
-        venues: [],
-        techPoints: null,
-        designNotes: null,
-        implementationTheme: "授業で習った [UniTask Stateパターン MVPパターン Singletonパターン]の何れかを使用して、自由にゲーム制作する課題",
-        troubleshooting: null,
-        performance: null
-    }
 ]
 
 export const gamejam:GameJam[]=[

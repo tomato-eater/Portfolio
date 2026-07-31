@@ -87,8 +87,8 @@ export default function Message(){
             </form>
 
             {/* 送信ステータスの表示 */}
-            {status === 'success' && <p style={{ color: 'green', textAlign: 'center', marginTop: '12px' }}>送信が完了しました！</p>}
-            {status === 'error' && <p style={{ color: 'red', textAlign: 'center', marginTop: '12px' }}>送信に失敗しました。再度お試しください。</p>}
+            {status === 'success' && <p style={{ color: 'green', textAlign: 'center', marginTop: '12px' }}>送信完了です。ご連絡ありがとうございました。</p>}
+            {status === 'error' && <p style={{ color: 'red', textAlign: 'center', marginTop: '12px' }}>送信失敗です。再度お試しください。</p>}
         </div>
     );
 }

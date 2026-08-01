@@ -195,7 +195,7 @@ export const works:Work[]=[
         gener: "2Dアクション",
         category: "個人制作",
         thumbnail: "/images/games/no2/t.png",
-        screenshots: [],
+        screenshots: ["/images/games/no2/s1.png","/images/games/no2/s2.png"],
         description: "ハンティングアクション",
         tags: ["個人製作"],
         platform: ["Windows"],

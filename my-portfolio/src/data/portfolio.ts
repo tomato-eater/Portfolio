@@ -194,7 +194,7 @@ export const works:Work[]=[
         title: "カスタムソルジャー",
         gener: "2Dアクション",
         category: "個人制作",
-        thumbnail: "/images/games/",
+        thumbnail: "/images/games/no2/t.png",
         screenshots: [],
         description: "ハンティングアクション",
         tags: ["個人製作"],

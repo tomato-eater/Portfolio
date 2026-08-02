@@ -120,6 +120,49 @@ export const profile:Profile = {
  */
 export const skills:Skill[] = [
     {
+        name: "C#",
+        version: null,
+        level: 75,
+        category: "プログラミング言語",
+        capabilities: [],
+        note: null
+    },{
+        name: "C++",
+        version: null,
+        level: 60,
+        category: "プログラミング言語",
+        capabilities: [],
+        note: null
+    },{
+        name: "HTML",
+        version: null,
+        level: 35,
+        category: "プログラミング言語",
+        capabilities: [],
+        note: null
+    },{
+        name: "CSS",
+        version: null,
+        level: 20,
+        category: "プログラミング言語",
+        capabilities: [],
+        note: null
+    },{
+        name: "PHP",
+        version: null,
+        level: 20,
+        category: "プログラミング言語",
+        capabilities: [],
+        note: null
+    },{
+        name: "Python",
+        version: null,
+        level: 40,
+        category: "プログラミング言語",
+        capabilities: [],
+        note: null
+    },
+    {
         name: "Unity",
         version: "6",
         level: 85,
